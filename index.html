@@ -1325,6 +1325,81 @@ ol.references li {
 <h3>Multi-Agent Architecture</h3>
 <p>Three independent Claude AI agents (Anthropic, 2026) were deployed, each assigned a single philosopher. Agents operated in complete isolation, no shared context, no cross-pollination of outputs, no awareness of the other agents&rsquo; arguments. This architectural separation was essential to the project&rsquo;s intellectual integrity: genuine philosophical disagreement, not manufactured consensus.</p>
 
+<!-- PRODUCTION DIAGRAM -->
+<div style="margin: 2em auto; max-width: 640px; font-family: Georgia, serif; font-size: 0.82rem;">
+  <p style="text-align: center; font-weight: 700; font-size: 0.9rem; margin-bottom: 1.2em; color: #6b2d2d;">How This Work Was Produced</p>
+
+  <!-- Step 1: Prompt -->
+  <div style="text-align: center; margin-bottom: 0.6em;">
+    <div style="display: inline-block; background: #6b2d2d; color: #fff; padding: 10px 24px; border-radius: 6px; font-weight: 600;">Single Prompt</div>
+  </div>
+  <div style="text-align: center; font-size: 1.2rem; color: #999; margin-bottom: 0.6em;">&darr;</div>
+
+  <!-- Step 2: Three Agents -->
+  <div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 0.4em; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 150px; max-width: 190px; border: 2px solid #6b2d2d; border-radius: 6px; padding: 12px; text-align: center; background: #f9f3eb;">
+      <div style="font-weight: 700; color: #6b2d2d;">Agent 1</div>
+      <div style="font-size: 0.78rem; color: #666; margin-top: 4px;">Socrates<br><span style="font-style: italic;">Epistemology</span></div>
+    </div>
+    <div style="flex: 1; min-width: 150px; max-width: 190px; border: 2px solid #6b2d2d; border-radius: 6px; padding: 12px; text-align: center; background: #f9f3eb;">
+      <div style="font-weight: 700; color: #6b2d2d;">Agent 2</div>
+      <div style="font-size: 0.78rem; color: #666; margin-top: 4px;">Plato<br><span style="font-style: italic;">Metaphysics</span></div>
+    </div>
+    <div style="flex: 1; min-width: 150px; max-width: 190px; border: 2px solid #6b2d2d; border-radius: 6px; padding: 12px; text-align: center; background: #f9f3eb;">
+      <div style="font-weight: 700; color: #6b2d2d;">Agent 3</div>
+      <div style="font-size: 0.78rem; color: #666; margin-top: 4px;">Aristotle<br><span style="font-style: italic;">Virtue Ethics</span></div>
+    </div>
+  </div>
+  <div style="text-align: center; font-size: 0.7rem; color: #999; margin-bottom: 0.4em;">Each agent operates in complete isolation. No shared context.</div>
+  <div style="text-align: center; font-size: 1.2rem; color: #999; margin-bottom: 0.6em;">&darr; &nbsp; &darr; &nbsp; &darr;</div>
+
+  <!-- Step 3: Independent Briefs -->
+  <div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 0.4em; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 150px; max-width: 190px; border: 1px dashed #999; border-radius: 4px; padding: 8px; text-align: center; background: #fff;">
+      <div style="font-size: 0.78rem; color: #555;">Socratic Brief<br>~6,000 tokens</div>
+    </div>
+    <div style="flex: 1; min-width: 150px; max-width: 190px; border: 1px dashed #999; border-radius: 4px; padding: 8px; text-align: center; background: #fff;">
+      <div style="font-size: 0.78rem; color: #555;">Platonic Brief<br>~7,000 tokens</div>
+    </div>
+    <div style="flex: 1; min-width: 150px; max-width: 190px; border: 1px dashed #999; border-radius: 4px; padding: 8px; text-align: center; background: #fff;">
+      <div style="font-size: 0.78rem; color: #555;">Aristotelian Brief<br>~7,000 tokens</div>
+    </div>
+  </div>
+  <div style="text-align: center; font-size: 1.2rem; color: #999; margin-bottom: 0.6em;">&darr; &nbsp; &darr; &nbsp; &darr;</div>
+
+  <!-- Step 4: Synthesis -->
+  <div style="text-align: center; margin-bottom: 0.6em;">
+    <div style="display: inline-block; border: 2px solid #6b2d2d; background: #f0e6d6; padding: 10px 24px; border-radius: 6px;">
+      <div style="font-weight: 700; color: #6b2d2d;">Synthesis Agent</div>
+      <div style="font-size: 0.78rem; color: #666; margin-top: 2px;">Weaves briefs into six-act dialogue<br>Introduces Technicus as interlocutor</div>
+    </div>
+  </div>
+  <div style="text-align: center; font-size: 1.2rem; color: #999; margin-bottom: 0.6em;">&darr;</div>
+
+  <!-- Step 5: Academic Agent -->
+  <div style="text-align: center; margin-bottom: 0.6em;">
+    <div style="display: inline-block; border: 2px solid #6b2d2d; background: #f0e6d6; padding: 10px 24px; border-radius: 6px;">
+      <div style="font-weight: 700; color: #6b2d2d;">Academic Framing Agent</div>
+      <div style="font-size: 0.78rem; color: #666; margin-top: 2px;">Introduction, Critical Commentary, Epilogue</div>
+    </div>
+  </div>
+  <div style="text-align: center; font-size: 1.2rem; color: #999; margin-bottom: 0.6em;">&darr;</div>
+
+  <!-- Step 6: Human Editor -->
+  <div style="text-align: center; margin-bottom: 0.6em;">
+    <div style="display: inline-block; background: #333; color: #fff; padding: 10px 24px; border-radius: 6px; font-weight: 600;">Human Editorial Review</div>
+  </div>
+  <div style="text-align: center; font-size: 0.7rem; color: #999;">Verified accuracy against primary sources. Screened for sensitivity.</div>
+  <div style="text-align: center; font-size: 1.2rem; color: #999; margin: 0.6em 0;">&darr;</div>
+
+  <!-- Step 7: Final -->
+  <div style="text-align: center;">
+    <div style="display: inline-block; background: #6b2d2d; color: #fff; padding: 10px 24px; border-radius: 6px; font-weight: 600;">Final Manuscript</div>
+    <div style="font-size: 0.7rem; color: #999; margin-top: 4px;">~40,000 tokens across 9 AI agents + human review</div>
+  </div>
+</div>
+<!-- END DIAGRAM -->
+
 <h3>Philosopher Briefs</h3>
 <p>Each agent received a structured brief requiring it to:</p>
 <ol>
@@ -1399,6 +1474,39 @@ ol.references li {
 <div class="section-divider"><span class="section-divider-inner"></span></div>
 
 <h1 id="glossary">Glossary of Terms</h1>
+
+<h2>AI and Technical Terms</h2>
+
+<dl style="line-height: 1.9;">
+  <dt><strong>Agent (AI Agent)</strong></dt>
+  <dd>A software system that uses a large language model to perform tasks. In this project, each "agent" was a separate session of the same AI model (Claude), given a distinct set of instructions. The agents could not communicate with each other. Think of it as giving the same actor three different scripts in three separate rooms.</dd>
+
+  <dt><strong>Alignment</strong></dt>
+  <dd>The challenge of ensuring an AI system pursues goals that match human intentions and values. A central concern in AI safety research and a recurring theme in the dialogue.</dd>
+
+  <dt><strong>Claude</strong></dt>
+  <dd>An AI model built by Anthropic. All agents in this project ran on the same Claude model. The model generates text by predicting the most likely next words, drawing on patterns learned from its training data.</dd>
+
+  <dt><strong>Hallucination</strong></dt>
+  <dd>When an AI generates information that sounds plausible but is factually incorrect, such as inventing citations to papers that do not exist. AI systems cannot distinguish between true and false statements; they produce whatever text is statistically likely given their input.</dd>
+
+  <dt><strong>Large Language Model (LLM)</strong></dt>
+  <dd>A type of AI system trained on vast amounts of text to predict and generate language. LLMs learn statistical patterns in language rather than being explicitly programmed with rules. Claude, GPT, and Gemini are examples.</dd>
+
+  <dt><strong>Multi-Agent Architecture</strong></dt>
+  <dd>A system design in which multiple AI agents work on different parts of a problem independently, and their outputs are later combined. In this project, three agents each produced a philosopher's arguments in isolation, and a fourth agent wove them into a dialogue.</dd>
+
+  <dt><strong>Prompt</strong></dt>
+  <dd>The instruction given to an AI model to guide its output. A prompt can be a question, a role assignment, or a detailed set of requirements. The quality and specificity of the prompt significantly shapes the AI's response.</dd>
+
+  <dt><strong>Token</strong></dt>
+  <dd>The basic unit of text that an AI model processes. Roughly, one token equals three-quarters of a word in English. "The AI Republic" is four tokens. This project generated approximately 40,000 tokens across all agents, equivalent to roughly 30,000 words.</dd>
+
+  <dt><strong>Training Data</strong></dt>
+  <dd>The large body of text that an AI model learns from before it is deployed. The model identifies statistical patterns in this data and uses them to generate new text. The training data for modern LLMs includes books, articles, websites, and other publicly available text.</dd>
+</dl>
+
+<h2>Greek Philosophical Terms</h2>
 
 <dl style="line-height: 1.9;">
   <dt><strong>Akrasia</strong> (Greek: <em>akrasia</em>)</dt>
