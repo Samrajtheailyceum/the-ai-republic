@@ -1773,16 +1773,25 @@ h2::after{content:"©SM2026-REPUBLIC";position:absolute;right:-9999px;font-size:
   var sid='R-'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
   var zw='\u200B\u200C\u200D\uFEFF';
 
-  /* === ENHANCED COPY HANDLER (30-char threshold, session ID, zero-width fingerprint) === */
+  /* === COPY HANDLER — blocks all copies except from citation box; fingerprints those === */
   document.addEventListener('copy',function(e){
-    var s=window.getSelection().toString();
-    if(s.length>30){
+    var sel=window.getSelection();
+    var node=sel&&sel.anchorNode&&(sel.anchorNode.nodeType===1?sel.anchorNode:sel.anchorNode.parentElement);
+    var inCitation=node&&node.closest&&node.closest('.citation-box');
+    var s=sel?sel.toString():'';
+    if(!inCitation){
+      e.clipboardData.setData('text/plain','\u00A9 2026 Samraj Matharu, The AI Lyceum\u00AE. Copying is disabled.');
+      e.clipboardData.setData('text/html','');
+      e.preventDefault();
+      return
+    }
+    if(s.length>10){
       var ts=new Date().toISOString();
       var cid=sid+'-'+Date.now().toString(36);
       var zwFingerprint=cid.split('').map(function(c){return zw[c.charCodeAt(0)%4]}).join('');
-      var w='\n\n[Source: The AI Republic: A Dialogue\u2122 by Samraj Matharu, The AI Lyceum\u00AE. Published 24 February 2026. https://republic.theailyceum.com | \u00A9 2026 Samraj Matharu. All rights reserved. Unauthorized reproduction prohibited. Copy ID: '+cid+' | '+ts+']\n';
+      var w='\n\n[Source: The AI Republic: A Dialogue\u2122 by Samraj Matharu, The AI Lyceum\u00AE. Published 24 February 2026. https://republic.theailyceum.com | \u00A9 2026 Samraj Matharu. All rights reserved. Copy ID: '+cid+' | '+ts+']\n';
       e.clipboardData.setData('text/plain',s+zwFingerprint+w);
-      e.clipboardData.setData('text/html',window.getSelection().getRangeAt(0).cloneContents().textContent+zwFingerprint+w.replace(/\n/g,'<br>'));
+      e.clipboardData.setData('text/html',s+w.replace(/\n/g,'<br>'));
       e.preventDefault()
     }
   });
@@ -1803,6 +1812,8 @@ h2::after{content:"©SM2026-REPUBLIC";position:absolute;right:-9999px;font-size:
     if((e.ctrlKey||e.metaKey)&&(e.key==='s'||e.key==='S')){e.preventDefault();return false}
     if((e.ctrlKey||e.metaKey)&&(e.key==='u'||e.key==='U')){e.preventDefault();return false}
     if((e.ctrlKey||e.metaKey)&&(e.key==='a'||e.key==='A')){e.preventDefault();return false}
+    if((e.ctrlKey||e.metaKey)&&!e.shiftKey&&(e.key==='c'||e.key==='C')){e.preventDefault();return false}
+    if((e.ctrlKey||e.metaKey)&&(e.key==='p'||e.key==='P')){e.preventDefault();return false}
   });
 
   /* === DEVTOOLS DETECTION === */
