@@ -1,0 +1,54 @@
+{
+  "@context": "http://www.w3.org/ns/odrl/2/",
+  "@type": "Policy",
+  "uid": "https://republic.theailyceum.com/tdm-policy",
+  "profile": "http://www.w3.org/ns/odrl/2/core",
+  "dc:title": "TDM Policy — The AI Republic: A Dialogue",
+  "dc:creator": "Samraj Matharu",
+  "dc:rights": "Copyright 2026 Samraj Matharu. All rights reserved.",
+  "dc:date": "2026-02-24",
+  "permission": [
+    {
+      "target": "https://republic.theailyceum.com/",
+      "action": "read",
+      "assignee": "http://www.w3.org/ns/odrl/2/public"
+    }
+  ],
+  "prohibition": [
+    {
+      "target": "https://republic.theailyceum.com/",
+      "action": "reproduce",
+      "assignee": "http://www.w3.org/ns/odrl/2/public"
+    },
+    {
+      "target": "https://republic.theailyceum.com/",
+      "action": "distribute",
+      "assignee": "http://www.w3.org/ns/odrl/2/public"
+    },
+    {
+      "target": "https://republic.theailyceum.com/",
+      "action": "derive",
+      "assignee": "http://www.w3.org/ns/odrl/2/public"
+    },
+    {
+      "target": "https://republic.theailyceum.com/",
+      "action": "modify",
+      "assignee": "http://www.w3.org/ns/odrl/2/public"
+    },
+    {
+      "target": "https://republic.theailyceum.com/",
+      "action": "archive",
+      "assignee": "http://www.w3.org/ns/odrl/2/public"
+    },
+    {
+      "target": "https://republic.theailyceum.com/",
+      "action": "textMining",
+      "assignee": "http://www.w3.org/ns/odrl/2/public"
+    },
+    {
+      "target": "https://republic.theailyceum.com/",
+      "action": "dataMining",
+      "assignee": "http://www.w3.org/ns/odrl/2/public"
+    }
+  ]
+}
