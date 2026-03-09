@@ -47,6 +47,24 @@ body {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 60px 32px 80px;
+  counter-reset: page-number;
+}
+
+/* Page number display for on-screen viewing */
+.page-number {
+  counter-increment: page-number;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: #999;
+  margin: 3em auto 1em;
+  padding: 0.5em 0;
+  border-top: 1px solid #e0d5c5;
+  max-width: 200px;
+}
+
+.page-number::after {
+  content: "— " counter(page-number) " —";
 }
 
 /* ===== HEADER / MASTHEAD ===== */
@@ -1384,6 +1402,7 @@ ol.references li {
 <!-- ===== EPILOGUE ===== -->
 <div class="section-divider"><span class="section-divider-inner"></span></div>
 
+<div class="page-number"></div>
 <h1 id="epilogue">Epilogue: After the Lyceum</h1>
 
 <p class="drop-cap">The dialogue ends, as Socratic dialogues often do, without resolution. The three philosophers have not convinced each other. They have not arrived at consensus. They depart the Lyceum as they entered it: Socrates still questioning, Plato still reaching toward forms, Aristotle still systematising, each certain of his method and sceptical of the others&rsquo;.</p>
@@ -1507,6 +1526,7 @@ ol.references li {
 <!-- ===== GLOSSARY ===== -->
 <div class="section-divider"><span class="section-divider-inner"></span></div>
 
+<div class="page-number"></div>
 <h1 id="glossary">Glossary of Terms</h1>
 
 <h2>AI and Technical Terms</h2>
@@ -1637,6 +1657,7 @@ ol.references li {
 <!-- ===== HOW TO CITE ===== -->
 <div class="section-divider"><span class="section-divider-inner"></span></div>
 
+<div class="page-number"></div>
 <h1 id="how-to-cite">How to Cite This Work</h1>
 
 <div class="citation-box">
@@ -1661,6 +1682,7 @@ ol.references li {
 <!-- ===== READ ONLINE ===== -->
 <div class="section-divider"><span class="section-divider-inner"></span></div>
 
+<div class="page-number"></div>
 <h1 id="read-online">Read Online</h1>
 
 <div class="citation-box">
