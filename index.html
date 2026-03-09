@@ -757,6 +757,12 @@ h2::after{content:"©SM2026-REPUBLIC";position:absolute;right:-9999px;font-size:
 .provenance-block h3{font-size:0.95rem;color:#0d2738;margin:0 0 12px 0;font-family:var(--font-sans);letter-spacing:0.5px;text-transform:uppercase}
 .provenance-block .hash{font-family:var(--font-mono);font-size:0.72rem;word-break:break-all;background:#f8f1e4;padding:6px 10px;border:1px solid #d9c9a8;margin:6px 0;display:block}
 .provenance-block .badge{display:inline-block;background:#0d2738;color:#f8f1e4;font-family:var(--font-sans);font-size:0.7rem;padding:3px 10px;border-radius:3px;letter-spacing:0.5px;margin-top:8px;text-transform:uppercase}
+/* === SCREENSHOT DETERRENT OVERLAY === */
+#ss-shield{position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;pointer-events:none;opacity:0;transition:opacity 0.15s;display:flex;align-items:center;justify-content:center;background:rgba(248,241,228,0.97)}
+#ss-shield.active{opacity:1;pointer-events:all}
+#ss-shield .ss-msg{text-align:center;font-family:Georgia,serif}
+#ss-shield .ss-msg h2{font-size:2.5rem;color:#0d2738;margin-bottom:0.5em}
+#ss-shield .ss-msg p{font-size:1.1rem;color:#6b2d2d;max-width:500px;margin:0 auto;line-height:1.6}
 </style>
 </head>
 <body>
@@ -1780,6 +1786,7 @@ h2::after{content:"©SM2026-REPUBLIC";position:absolute;right:-9999px;font-size:
 <!-- The world's first published multi-agent Socratic dialogue on artificial intelligence -->
 <!-- Unauthorized reproduction, distribution, or derivative works are prohibited -->
 <!-- Contact: hello@theailyceum.com -->
+<div id="ss-shield"><div class="ss-msg"><h2>&copy; The AI Lyceum&reg;</h2><p>This content is protected by copyright.<br>Screenshots are monitored and watermarked.<br>hello@theailyceum.com</p></div></div>
 <script>
 (function(){
   /* === SESSION FINGERPRINT === */
@@ -1880,6 +1887,44 @@ h2::after{content:"©SM2026-REPUBLIC";position:absolute;right:-9999px;font-size:
   for(var si=0;si<sections.length;si++){
     sections[si].setAttribute('data-wid','SM2026-R-S'+String(si+1).padStart(3,'0'));
   }
+
+  /* === SCREENSHOT DETERRENT === */
+  var shield=document.getElementById('ss-shield');
+  var shieldTimer=null;
+  function showShield(){shield.classList.add('active');clearTimeout(shieldTimer);shieldTimer=setTimeout(function(){shield.classList.remove('active')},3000)}
+
+  /* Block PrintScreen (Windows keyCode 44) and Mac Cmd+Shift+3/4/5 */
+  document.addEventListener('keyup',function(e){
+    if(e.key==='PrintScreen'||e.keyCode===44){
+      showShield();
+      navigator.clipboard.writeText('\u00A9 The AI Lyceum\u00AE — Screenshots are watermarked and monitored.').catch(function(){});
+      e.preventDefault();
+    }
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.metaKey&&e.shiftKey&&(e.key==='3'||e.key==='4'||e.key==='5')){
+      showShield();
+      e.preventDefault();return false;
+    }
+  });
+
+  /* Blur content when tab/window loses focus (catches most screenshot tools) */
+  var blurTimer=null;
+  document.addEventListener('visibilitychange',function(){
+    if(document.hidden){
+      document.body.style.filter='blur(12px)';
+      clearTimeout(blurTimer);
+    }else{
+      blurTimer=setTimeout(function(){document.body.style.filter='none'},300);
+    }
+  });
+  window.addEventListener('blur',function(){
+    document.body.style.filter='blur(12px)';
+    clearTimeout(blurTimer);
+  });
+  window.addEventListener('focus',function(){
+    blurTimer=setTimeout(function(){document.body.style.filter='none'},300);
+  });
 })();
 </script>
 </body>
