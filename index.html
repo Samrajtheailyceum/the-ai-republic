@@ -1908,23 +1908,6 @@ h2::after{content:"©SM2026-REPUBLIC";position:absolute;right:-9999px;font-size:
     }
   });
 
-  /* Blur content when tab/window loses focus (catches most screenshot tools) */
-  var blurTimer=null;
-  document.addEventListener('visibilitychange',function(){
-    if(document.hidden){
-      document.body.style.filter='blur(12px)';
-      clearTimeout(blurTimer);
-    }else{
-      blurTimer=setTimeout(function(){document.body.style.filter='none'},300);
-    }
-  });
-  window.addEventListener('blur',function(){
-    document.body.style.filter='blur(12px)';
-    clearTimeout(blurTimer);
-  });
-  window.addEventListener('focus',function(){
-    blurTimer=setTimeout(function(){document.body.style.filter='none'},300);
-  });
 })();
 </script>
 </body>
