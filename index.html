@@ -50,21 +50,33 @@ body {
   counter-reset: page-number;
 }
 
-/* Page number display for on-screen viewing */
+/* Page number display - clear visual page breaks */
 .page-number {
   counter-increment: page-number;
   text-align: center;
   font-family: var(--font-sans);
   font-size: 0.75rem;
-  color: #999;
-  margin: 3em auto 1em;
-  padding: 0.5em 0;
-  border-top: 1px solid #e0d5c5;
-  max-width: 200px;
+  color: #666;
+  margin: 4em 0 2em;
+  padding: 2em 0;
+  border-top: 3px double #c4a882;
+  border-bottom: 1px solid #e0d5c5;
+  background: linear-gradient(to bottom, transparent, #f9f6f0, transparent);
+  page-break-before: always;
+}
+
+.page-number::before {
+  content: "◆";
+  display: block;
+  font-size: 0.6rem;
+  color: #c4a882;
+  margin-bottom: 0.5em;
 }
 
 .page-number::after {
-  content: "— " counter(page-number) " —";
+  content: "Page " counter(page-number);
+  font-weight: 600;
+  letter-spacing: 0.1em;
 }
 
 /* ===== HEADER / MASTHEAD ===== */
