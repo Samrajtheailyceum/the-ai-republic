@@ -554,6 +554,51 @@ ol.references li {
   text-indent: -20px;
 }
 
+/* ===== PROVENANCE BLOCK ===== */
+.provenance-block {
+  margin: 2em 0;
+  padding: 20px 24px;
+  background: #f0e6d0;
+  border: 1px solid #c4a882;
+  border-left: 4px solid #0d2738;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: #3d4f5f;
+}
+
+.provenance-block h3 {
+  font-size: 0.95rem;
+  color: #0d2738;
+  margin: 0 0 12px 0;
+  font-family: var(--font-sans);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.provenance-block code.hash {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  word-break: break-all;
+  background: #f8f1e4;
+  padding: 6px 10px;
+  border: 1px solid #d9c9a8;
+  margin: 6px 0;
+  display: block;
+}
+
+.provenance-block .badge {
+  display: inline-block;
+  background: #0d2738;
+  color: #f8f1e4;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  padding: 3px 10px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+  text-transform: uppercase;
+}
+
 /* ===== DISCLAIMER / EDITORIAL ===== */
 .disclaimer {
   background: var(--color-bg-alt);
@@ -744,6 +789,20 @@ ol.references li {
     <p style="margin: 0; font-size: 0.65rem; color: #999; line-height: 1.5;">Chief AI Officer @ WPP | CEO @ Satalia &amp; Conscium<br>Global Top 10 CAIO | EIR @ UCL</p>
   </div>
 </header>
+
+<!-- ===== PROVENANCE & INTEGRITY ===== -->
+<div class="section-divider"><span class="section-divider-inner"></span></div>
+
+<p style="text-align: center; font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: #999; margin-top: 2em; margin-bottom: 2em;">Provenance &amp; Integrity</p>
+
+<div class="provenance-block" data-wid="SM2026-R-PROVENANCE">
+  <h3>Blockchain-Anchored Proof of Authorship</h3>
+  <p>This work was authored by Samraj Matharu and published on <strong>24 February 2026</strong>. The cryptographic hash below was computed from the original PDF at the time of publication and anchored to the Bitcoin blockchain via OpenTimestamps.</p>
+  <p><strong>PDF:</strong> The-AI-Republic-A-Dialogue.pdf</p>
+  <code class="hash">SHA-256: d386a7f951d37cdf43a26098d9eb1e74bdb9cab8c34e1e6c16a8c63cae5f69a3</code>
+  <p style="margin-top: 8px; font-size: 0.78rem;">Verify: run <code style="background:#f8f1e4;padding:2px 6px;font-size:0.75rem;">shasum -a 256 The-AI-Republic-A-Dialogue.pdf</code> against the hash above. The corresponding <code>.ots</code> proof file is available in the source repository.</p>
+  <span class="badge">Blockchain-Timestamped &middot; OpenTimestamps</span>
+</div>
 
 <!-- ===== ABSTRACT ===== -->
 <div class="abstract">
